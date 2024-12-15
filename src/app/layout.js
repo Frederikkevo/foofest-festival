@@ -1,8 +1,20 @@
-export default function Layout({ children }) {
+
+import '../styles/globals.css';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+
+export const metadata = {
+  title: 'Foofest Festival',
+  description: 'Your ultimate festival experience',
+};
+
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-gray-100">
-        <main className="max-w-6xl mx-auto p-4">{children}</main>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );
