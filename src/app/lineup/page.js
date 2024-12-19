@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image'; 
+import Image from 'next/image';
 
 export default function Lineup() {
   const [bands, setBands] = useState([]);
@@ -32,21 +32,26 @@ export default function Lineup() {
                 src={band.image}
                 alt={band.name}
                 className="w-full h-48 object-cover mb-4 rounded"
+                onError={(e) => e.target.style.display = 'none'}
               />
             )}
             <h2 className="text-2xl font-bold">{band.name}</h2>
             <p className="text-gray-700">{band.genre}</p>
             {band.logo && (
-              <Image
-                src={band.logo.startsWith('https') ? band.logo : `https://hill-mirror-era.glitch.me/logos/${band.logo}`}
-                width={250}
-                height={350}
-                alt={`${band.name} logo`}
-                className="my-2"
-                unoptimized={true}
-              />
+              <div>
+                <Image
+                  src={band.logo.startsWith('https') ? band.logo : `https://hill-mirror-era.glitch.me/logos/${band.logo}`}
+                  width={250}
+                  height={350}
+                  alt={`${band.name} logo`}
+                  unoptimized={true}
+                  className="my-2"
+                />
+                {band.logoCredits && (
+                  <p key={`credits-${band.id}`} className="text-xs text-gray-500 mt-2">{band.logoCredits}</p>
+                )}
+              </div>
             )}
-            {band.logoCredits && <p className="text-xs text-gray-500 mt-2">{band.logoCredits}</p>}
           </div>
         ))}
       </div>
