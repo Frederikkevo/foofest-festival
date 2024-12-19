@@ -6,8 +6,9 @@ const API_BASE_URL = "https://hill-mirror-era.glitch.me";
  * @returns {Promise<any>} - Returns the parsed JSON data
  */
 export async function fetchData(endpoint) {
+    console.log("endpoint: ", endpoint)
   try {
-    const response = await fetch(`${API_BASE_URL}${endpoint}`);
+    const response = await fetch(`${API_BASE_URL}/${endpoint}`);
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
