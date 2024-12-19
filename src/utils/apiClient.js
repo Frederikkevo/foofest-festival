@@ -1,9 +1,8 @@
 const API_BASE_URL = "https://hill-mirror-era.glitch.me";
 
 /**
- * Helper function to fetch data from API
- * @param {string} endpoint - The API endpoint (e.g., "/schedule", "/artists")
- * @returns {Promise<any>} - Returns the parsed JSON data
+ * @param {string} endpoint - 
+ * @returns {Promise<any>} - 
  */
 export async function fetchData(endpoint) {
     console.log("endpoint: ", endpoint)
@@ -23,6 +22,6 @@ export async function fetchData(endpoint) {
     return data;
   } catch (error) {
     console.error(`Error fetching ${endpoint}:`, error.message);
-    throw error; // Rethrow for handling in components
+    throw error; 
   }
 }
