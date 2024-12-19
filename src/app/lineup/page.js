@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';  // Ensure you're using the Next.js Image component for optimized image handling
+import Image from 'next/image'; 
 
 export default function Lineup() {
   const [bands, setBands] = useState([]);
@@ -43,7 +43,7 @@ export default function Lineup() {
                 height={350}
                 alt={`${band.name} logo`}
                 className="my-2"
-                unoptimized={true} // Use this prop if you face issues with external images
+                unoptimized={true}
               />
             )}
             {band.logoCredits && <p className="text-xs text-gray-500 mt-2">{band.logoCredits}</p>}
