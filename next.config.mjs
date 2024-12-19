@@ -1,17 +1,11 @@
-/** @type {import('next').NextConfig} */
- 
 const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**',
-      },
-    ],
-  },
-}
-
-export default nextConfig;
-
+    images: {
+      domains: ['picsum.photos', 'https://hill-mirror-era.glitch.me/', 'localhost'],
+      remotePatterns: [
+        { protocol: 'https', hostname: '**' },
+      ],
+    },
+  }
+  
+  export default nextConfig;
+  
